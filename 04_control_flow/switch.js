@@ -22,8 +22,9 @@ switch (month) {
     case "april":
         console.log("april");
         break;
-
     default:
         console.log("default case match");
         break;
 }
+
+//if not use the break in cases then after if passes some condition then all cases after that will be executed except default

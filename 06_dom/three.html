@@ -10,17 +10,22 @@
     
 </body>
 <script>
+    // creating element 
     const div = document.createElement('div')
     console.log(div);
+    // adding classname and id of element
     div.className = "main"
     div.id = Math.round(Math.random() * 10 + 1)
+    // setting attribute tittle
     div.setAttribute("title", "generated title")
     div.style.backgroundColor = "green"
     div.style.padding = "12px"
+    // adding text in element ( innerText overwrite in a refrence )
     // div.innerText = "Chai aur code"
     const addText = document.createTextNode("Chai aur code")
+    // adding text in element div 
     div.appendChild(addText)
-
+    //attaching with document 
     document.body.appendChild(div)
 </script>
 </html>

@@ -1,12 +1,21 @@
-const myNums = [1, 2, 3]
 
+// reduce js mdn
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+
+const myNums = [1, 2, 3]
+// reduce (callback function)
+// if curly brac then return is there
 // const myTotal = myNums.reduce(function (acc, currval) {
 //     console.log(`acc: ${acc} and currval: ${currval}`);
 //     return acc + currval
-// }, 0)
+// }, 0)  // there 0 value is pass as intial value
+// console.log(myTotal);
 
+// life example in shopping cart
+
+// no need to write return here 
 const myTotal = myNums.reduce( (acc, curr) => acc+curr, 0)
-
 console.log(myTotal);
 
 

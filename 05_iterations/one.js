@@ -1,4 +1,4 @@
-// for
+// for loop
 
 for (let i = 0; i <= 10; i++) {
     const element = i;
@@ -9,7 +9,7 @@ for (let i = 0; i <= 10; i++) {
     
 }
 
-// console.log(element);
+// console.log(element); //element scope is only on for loop    
 
 for (let i = 1; i <= 10; i++) {
     //console.log(`Outer loop value: ${i}`);

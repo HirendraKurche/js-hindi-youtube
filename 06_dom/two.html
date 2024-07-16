@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,22 +18,43 @@
 <script>
     const parent = document.querySelector('.parent')
     // console.log(parent);
-    // console.log(parent.children);
-    // console.log(parent.children[1].innerHTML);
 
+    // console.log(parent.children); //gives html collection
+    
+    // console.log(parent.children[1]);//ACCESSING 1st children
+    // console.log(parent.children[1].innerHTML);
+    // looping html collection
     // for (let i = 0; i < parent.children.length; i++) {
     //      console.log(parent.children[i].innerHTML);
         
     // }
     parent.children[1].style.color = "orange"
-    // console.log(parent.firstElementChild);
+
+    // console.log(parent.firstElementChild);//gives first child
     // console.log(parent.lastElementChild);
 
-    const dayOne = document.querySelector('.day')
+    // querry selector is expensive operation 
+    const dayOne = document.querySelector('.day') //first value select
     // console.log(dayOne);
-    // console.log(dayOne.parentElement);
-    // console.log(dayOne.nextElementSibling);
 
-    console.log("NODES: ", parent.childNodes);
+    // console.log(dayOne.parentElement); //optimise way to get parrent if have child
+    // console.log(dayOne.nextElementSibling); //optimise way to get sibling if have child
+
+    console.log("NODES: ", parent.childNodes); //no of list in nodelist in dom  ( it return 9 as list )
+    // 1st  line break do have node count also comment 
+    
 </script>
 </html>
+
+<!-- 
+Relation
+
+
+
+
+
+
+
+
+
+--->

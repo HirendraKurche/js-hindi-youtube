@@ -1,7 +1,7 @@
 // for of
 
-// ["", "", ""]
-// [{}, {}, {}]
+// ["", "", ""] //string inside array
+// [{}, {}, {}] //obj inside array
 
 const arr = [1, 2, 3, 4, 5]
 
@@ -14,7 +14,7 @@ for (const greet of greetings) {
     //console.log(`Each char is ${greet}`)
 }
 
-// Maps
+// Maps (object) unique ordered key-value pair
 
 const map = new Map()
 map.set('IN', "India")
@@ -25,10 +25,15 @@ map.set('IN', "India")
 
 // console.log(map);
 
+for (const key of map) {
+    // console.log(key); //will print key value pair
+}
+
 for (const [key, value] of map) {
     // console.log(key, ':-', value);
 }
 
+// iterator in obj is not possible
 const myObject = {
     game1: 'NFS',
     game2: 'Spiderman'
