@@ -145,4 +145,5 @@ fetch('https://api.github.com/users/hiteshchoudhary')
 //fetch execute first then the all above thing , why?
 
 // promise.all
-// yes this is also available, kuch reading aap b kro.
+// yes this is also available, kuch reading aap b kro.\
+// WSDD
