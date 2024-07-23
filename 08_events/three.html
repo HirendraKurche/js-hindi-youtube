@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,12 +11,28 @@
     <button id="stop">Stop</button>
 </body>
 <script>
+    
+    setInterval(() => {
+        consol.log("hello",Date.now());
+    }, 1000);
+    
+    // const sayDate = function(){
+    //     console.log("hello", Date.now());
+
+    // }
+    // setInterval(sayDate,1000)
+
     const sayDate = function(str){
         console.log(str, Date.now());
     }
 
-    const intervalId = setInterval(sayDate, 1000, "hi")
+    setInterval(sayDate, 1000, "hi")
 
-    clearInterval(intervalId)
+    // refrence for clear   
+    const intervalId = setInterval(sayDate, 1000, "hi")
+    clearInterval(intervalId) //interval not run 
+    
+    // <!-- task by using start and stop button function the date which is printing -->
+
 </script>
 </html>

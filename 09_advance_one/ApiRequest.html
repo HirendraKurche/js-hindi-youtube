@@ -1,29 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body style="background-color: #212121;">
-    0	UNSENT	Client has been created. open() not called yet.
-1	OPENED	open() has been called.
-2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
-3	LOADING	Downloading; responseText holds partial data.
-4	DONE	The operation is complete.
+    <!-- important read below -->
+    0 UNSENT Client has been created. open() not called yet.
+    1 OPENED open() has been called.
+    2 HEADERS_RECEIVED send() has been called, and headers and status are available.
+    3 LOADING Downloading; responseText holds partial data.
+    4 DONE The operation is complete.
 </body>
 <script>
+    // json formatter website for reading api's
+    // ->randomuser.me
+
+    /*
+    An Application Programming Interface (API) is a software intermediary that enables two applications or systems to communicate with each other. It acts as a messenger, allowing different programs or components to exchange data and functionality in a structured and standardized way.
+
+    Key Characteristics
+
+    Interface: API provides a defined set of rules, protocols, and tools for building software applications.
+    Intermediary: API sits between different applications, systems, or services, facilitating data exchange and processing.
+    Standardized: API specifies a common language and format for data exchange, ensuring compatibility and interoperability.
+
+    APIs are used to:
+
+    Share data between different applications or systems
+    Integrate third-party services or libraries
+    Enable web services and microservices architecture
+    Facilitate data exchange and processing between organizations
+    
+    Types of APIs
+    APIs can be categorized based on their architecture, protocol, and functionality. Some common types include:
+
+    REST (Representational State of Resource) APIs
+    SOAP (Simple Object Access Protocol) APIs
+    GraphQL APIs
+    Microservices APIs
+
+    */
+    //    https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+
+    
+
     const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', requestUrl)
-    xhr.onreadystatechange = function(){
-        console.log(xhr.readyState);
+    
+    const xhr = new XMLHttpRequest();//creating a new xmlh class and storing in a variable
+    // different methods
+    xhr.open('GET', requestUrl) //open-> two parameter = method and string 
+    // to continuosly track the change in state using readyState
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState);// tracking the change of states 
+        // detecting state if become 4
         if (xhr.readyState === 4) {
-            const data = JSON.parse(this.responseText)
-            console.log(typeof data);
+            // console.log(this.response)
+            // to check no of followers in given data  
+            console.log(typeof data);// here data type is string
+            const data = JSON.parse(this.responseText) // converting string to json 
+            console.log(typeof data);// now type become object
             console.log(data.followers);
         }
     }
     xhr.send();
+
+    // console.log , document are not part of js.  console.log is a debugging tool which is inject by runtime environmet
+    // v8 engine in github d  
+
+    // assignment as extracted follower above extract photo and create a card if clicked in a photo shows the number of follower or follower count below photo 
 </script>
+
 </html>

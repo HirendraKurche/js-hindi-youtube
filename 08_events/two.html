@@ -10,18 +10,59 @@
     <button id="stop">Stop</button>
 </body>
 <script>
-    const sayHitesh = function(){
+    // setTimeOut() is a method which calls api //time to given in millisecond 
+    // window object
+    // clearInterval and clearTimeout
+
+    // handler function without name 
+    setTimeout(function(){
+        console.log("Hello");
+    },2000)
+
+    // silly is setInterval which give interval
+    // setInterval 
+
+    // using refrence of a function for setTimeout 
+    const sayHitesh = function(){ 
         console.log("Hitesh");
+
     }
+    // setTimeout(sayHitesh(),2000) //not give function
+    //giving refrence 
+    setTimeout(sayHitesh,2000)
+
+
+    // if want to set timeout for this below implementation  
+    document.querySelector('h1').innerHTML = "best JS series"
     const changeText = function(){
         document.querySelector('h1').innerHTML = "best JS series"
     }
+    setTimeout(changeText, 2000)
 
+    
     const changeMe = setTimeout(changeText, 2000)
-
+    // clearTimeout needs refrence ( normall we apply it on some events)
     document.querySelector('#stop').addEventListener('click', function(){
         clearTimeout(changeMe)
         console.log("STOPPED")
-    })
+    }) 
 </script>
 </html>
+
+
+<!-- 
+JAVASCRIPT ( default ) -> SYNCHRONOUS LANGUAGE (operations are happen one after the other )
+-> single threaded ( execute in one thread -> may load slow? not at all as always found in run time environment )
+
+execution context -> execute code one line at a time  
+
+blocking code vs non blocking code ( synchronous or asynchronous)-> 
+blocking code -> code that is executed one after the other ( synchronous )
+non blocking code -> code that is executed in parallel ( asynchronous ) -> non blocking code is executed in
+parallel and blocking code is executed in sequence ( one after the other ) -> non blocking code is executed
+which is best ? -> register success message for user 
+
+# screenshots 37 
+
+
+-->

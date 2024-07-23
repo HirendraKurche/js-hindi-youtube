@@ -221,9 +221,12 @@ function newGame() {
 # Project 5 solution
 
 ```javascript
-const insert = document.getElementById('insert');
+// seeing pressed key
 
+const insert = document.getElementById('insert');
+//to add event in whole window
 window.addEventListener('keydown', (e) => {
+  
   insert.innerHTML = `
     <div class='color'>
     <table>
@@ -233,14 +236,14 @@ window.addEventListener('keydown', (e) => {
       <th>Code</th>
     </tr>
     <tr>
-      <td>${e.key === ' ' ? 'Space' : e.key}</td>
+      <td>${e.key === ' ' ? 'Space' : e.key}</td> 
       <td>${e.keyCode}</td> 
       <td>${e.code}</td>
     </tr>
     
   </table>
     </div>
-  `;
+  ` //if value is empty add space;
 });
 
 
@@ -251,6 +254,7 @@ window.addEventListener('keydown', (e) => {
 ```javascript
 //generate a random color
 
+// generating a random hex colour 
 const randomColor = function () {
   const hex = '0123456789ABCDEF';
   let color = '#';
@@ -260,24 +264,30 @@ const randomColor = function () {
   return color;
 };
 
-let intervalId;
+// start changing colour function
+// setting interval for changing colour 
+let intervalId;//declared in global scope
 const startChangingColor = function () {
-  if (!intervalId) {
+  if (!intervalId) { //checking if not null then only run 
     intervalId = setInterval(changeBgColor, 1000);
   }
 
   function changeBgColor() {
+    // taking refrence of style background color refrence
     document.body.style.backgroundColor = randomColor();
   }
 };
+    // stop changing colour function
+    // taking refrence of declared intervalId for clear intervalID
 const stopChangingColor = function () {
   clearInterval(intervalId);
-  intervalId = null;
+  intervalId = null;// corner case flusing out intervalId i.e. derefrencing intervalId  
 };
 
+// taking start and stop button refrence  
 document.querySelector('#start').addEventListener('click', startChangingColor);
 
 document.querySelector('#stop').addEventListener('click', stopChangingColor);
 
-
+// do process by process # how he does thingd the importance of thought
 ```
