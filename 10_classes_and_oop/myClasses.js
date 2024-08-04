@@ -1,5 +1,5 @@
-// ES6
-
+// after ES6
+//class is keyword 
 class User {
     constructor(username, email, password){
         this.username = username;
@@ -10,6 +10,7 @@ class User {
     encryptPassword(){
         return `${this.password}abc`
     }
+    //toUppercase method 
     changeUsername(){
         return `${this.username.toUpperCase()}`
     }
@@ -21,14 +22,14 @@ const chai = new User("chai", "chai@gmail.com", "123")
 console.log(chai.encryptPassword());
 console.log(chai.changeUsername());
 
-// behind the scene
-
+// behind the scene what happen
+//function calling
 function User(username, email, password){
     this.username = username;
     this.email = email;
     this.password = password
 }
-
+//behind the scene for methods 
 User.prototype.encryptPassword = function(){
     return `${this.password}abc`
 }
@@ -36,7 +37,7 @@ User.prototype.changeUsername = function(){
     return `${this.username.toUpperCase()}`
 }
 
-
+//use case behind the scene 
 const tea = new User("tea", "tea@gmail.com", "123")
 
 console.log(tea.encryptPassword());

@@ -1,0 +1,14 @@
+## to be implement in a browser console
+
+const newHero= ["hulk","spiderman"]
+newHero
+
+//length property
+//prototyple behavior of js 
+// this behaviour is the reason of working of this keyword , classes and prototyple inheritances
+
+//this is the reason why arrow function not have this. keyword
+
+##screenshot
+
+

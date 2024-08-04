@@ -1,74 +1,93 @@
+<!-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures -->
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Closure aur chai</title>
 </head>
+
 <body style="background-color: #313131;">
     <button id="orange">Orange</button>
     <button id="green">Green</button>
 </body>
 
-    <script>
-    // function init() {
-    //     let name = "Mozilla"; 
-    //     function displayName() {
-    //         console.log(name); 
-    //     }
-    //     displayName();
-    // }
-    // init();
+<script>
 
+    //lexical scoping
+
+    // function init() {
+    //     let name = "Mozilla";
+    //     function displayName() {
+    //         console.log(name);
+    //     }
+    //     displayName(); //running the display function
+    // }
+    // init(); //it is not accesible in outer scope
+
+    //lexical scoping : function inside another function have access of outer function
     // function outer(){
     //     let username = "hitesh"
-    //     console.log("OUTER", secret);
+    //     console.log("OUTER", secret);//secret is not access as define in child function
     //     function inner(){
     //         let secret = "my123"
     //         console.log("inner", username);
     //     }
+    //
     //     function innerTwo(){
     //         console.log("innerTwo", username);
-    //         console.log(secret);
+    //         console.log(secret); //cannot access secret as it is brother not a child that is function inside function
     //     }
     //     inner()
     //     innerTwo()
-
     // }
     // outer()
-    // console.log("TOO OUTER", username);
+    // console.log("TOO OUTER", username); //not accessible, not in scope
 
+
+    //closure
 
     // function makeFunc() {
     //     const name = "Mozilla";
     //     function displayName() {
     //         console.log(name);
     //     }
-    //     return displayName;
+        // return displayName; //passing refrence of function so that return is called , since memory have some lexical scope // that is lexical of makefun and displayName is ehole return while returning displayName
     // }
 
     // const myFunc = makeFunc();
     // myFunc();
 
-    </script>
-    <script>
-        // document.getElementById("orange").onclick = function(){
-        //     document.body.style.backgroundColor = `orange`
-        // }
-        // document.getElementById("green").onclick = function(){
-        //     document.body.style.backgroundColor = `green`
-        // }
+</script>
+<script>
+    // mini project 
 
-        function clickHandler(color){
-            // document.body.style.backgroundColor = `${color}`
+    // document.getElementById("orange").onclick = function(){
+    //     document.body.style.backgroundColor = `orange`
+    // }
+    // document.getElementById("green").onclick = function(){
+    //     document.body.style.backgroundColor = `green`
+    // }
 
-            return function(){
-                document.body.style.backgroundColor = `${color}`
-            }
+    //alternate click handler function if multiple buttons
+
+    function clickHandler(color) {
+        // document.body.style.backgroundColor = `${color}`
+
+        //return also have lexical scope of above function so return function also have access 
+        return function () {
+            document.body.style.backgroundColor = `${color}`
         }
+    }
 
-        document.getElementById('orange').onclick = clickHandler("orange")
-        document.getElementById('green').onclick = clickHandler("green")
+    document.getElementById('orange').onclick = clickHandler("orange")
+    document.getElementById('green').onclick = clickHandler("green")
 
-    </script>
+    //#50 vedio story of michael fels
+    //of understanding unknown factors
+
+</script>
+
 </html>

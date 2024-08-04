@@ -1,29 +1,37 @@
-function multipleBy5(num){
 
-    return num*5
+
+function multipleBy5(num) {
+
+    return num * 5
 }
 
+//by below we understand everything is object in js
 multipleBy5.power = 2
-
 console.log(multipleBy5(5));
 console.log(multipleBy5.power);
 console.log(multipleBy5.prototype);
 
-function createUser(username, score){
+
+function createUser(username, score) {
+    // this. to set current context 
     this.username = username
     this.score = score
 }
-
-createUser.prototype.increment = function(){
+//declaring our own function
+createUser.prototype.increment = function () {
+    // whose score to increase as their is not given context so using this. for current context
     this.score++
 }
-createUser.prototype.printMe = function(){
+// declaring one more method
+createUser.prototype.printMe = function () {
     console.log(`price is ${this.score}`);
 }
 
+//new keyword is used as without this not able to implement prototype which we have declare 
 const chai = new createUser("chai", 25)
 const tea = createUser("tea", 250)
 
+// chai.prototype.printMe()//not need to declare prototype so directly printMe
 chai.printMe()
 
 
